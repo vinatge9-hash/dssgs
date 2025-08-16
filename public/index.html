@@ -1,0 +1,428 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:300,400,500,600,700&family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Starlit Bistro — real guest reviews, unforgettable flavors. Read authentic reviews and leave your own." />
+    <meta property="og:title" content="Starlit Bistro — Guest Reviews" />
+    <meta property="og:description" content="Discover why guests fall in love with Starlit Bistro. Read honest reviews, see ratings distribution, and leave your own review." />
+    <meta property="og:image" content="https://images.pexels.com/photos/18150815/pexels-photo-18150815.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" />
+    <title>Starlit Bistro — Reviews</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root{
+        --glass: rgba(255,255,255,0.06);
+        --glass-2: rgba(255,255,255,0.04);
+        --accent-start: #FF7A59;
+        --accent-end: #7F00FF;
+      }
+      [data-theme='dark']{
+        --glass: rgba(10,10,12,0.45);
+        --glass-2: rgba(255,255,255,0.02);
+      }
+      .glass {
+        backdrop-filter: blur(8px) saturate(120%);
+        background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      }
+      .parallax-hero{
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+      /* Small micro animations */
+      .rise { transform: translateY(6px); opacity: 0; transition: transform .6s ease, opacity .6s ease; }
+      .rise.show{ transform: translateY(0); opacity: 1; }
+      .focus-outline:focus{ outline: 2px dashed rgba(255,255,255,0.12); outline-offset: 4px; }
+    </style>
+  </head>
+  <body style="font-family: 'Merriweather', sans-serif;" class="min-h-screen text-white bg-gradient-to-b from-[#020617] to-[#09102b]" data-theme="dark">
+
+    <!-- Top nav -->
+    <header class="w-full fixed top-0 left-0 z-40">
+      <nav class="w-full px-6 py-4 flex items-center justify-between backdrop-blur-md glass" aria-label="Main navigation">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--accent-start)] to-[var(--accent-end)] flex items-center justify-center shadow-lg transform hover:scale-105 transition">🍴</div>
+          <div class="leading-tight">
+            <div class="font-bold text-lg tracking-tight">Starlit Bistro</div>
+            <div class="text-xs text-gray-300 -mt-1">A taste to remember</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-4">
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm hover:underline">About</a>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm hover:underline">Contact</a>
+          <a href="#reviews" class="text-sm hover:underline">Reviews</a>
+          <button id="themeToggle" aria-label="Toggle dark mode" class="ml-4 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/8 transition focus-outline">🌓</button>
+          <button id="openReview" class="ml-2 px-4 py-2 rounded-full bg-gradient-to-r from-[var(--accent-start)] to-[var(--accent-end)] shadow-lg hover:brightness-110 transform hover:-translate-y-0.5 transition focus-outline">Leave a Review</button>
+        </div>
+
+        <div class="md:hidden">
+          <button id="mobileMenuBtn" class="p-2 bg-white/5 rounded-lg focus-outline">☰</button>
+        </div>
+      </nav>
+
+      <!-- mobile menu -->
+      <div id="mobileMenu" class="hidden w-full px-6 py-4 bg-black/30 glass md:hidden">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="block py-2">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="block py-2">Contact</a>
+        <a href="#reviews" class="block py-2">Reviews</a>
+        <button id="mobileOpenReview" class="w-full mt-3 px-4 py-2 rounded-full bg-gradient-to-r from-[var(--accent-start)] to-[var(--accent-end)]">Leave a Review</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="w-full overflow-x-hidden">
+      <section class="w-full h-screen parallax-hero flex items-center" style="background-image: linear-gradient(180deg, rgba(7,8,15,0.55), rgba(7,8,15,0.65)), url(https://images.unsplash.com/photo-1728566826494-759fd32b1826?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxjb3p5JTIwYmlzdHJvJTIwaW50ZXJpb3IlMjB3aXRoJTIwZmFpcnklMjBsaWdodHMlMjBhbmQlMjBjb3VwbGVzJTIwZGluaW5nfGVufDB8MHx8fDE3NTUzNDY2MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080)">
+        <div class="w-full px-6 py-24">
+          <div class="w-full max-w-none flex flex-col md:flex-row items-start gap-8">
+            <div class="w-full md:w-1/2 text-left text-white rise" data-reveal>
+              <h1 class="text-5xl md:text-6xl leading-tight font-extrabold tracking-tight" style="font-family: 'Poppins', sans-serif;">Real reviews. Real flavor. Real moments.</h1>
+              <p class="mt-4 text-lg text-gray-300 max-w-none" style="font-family: 'Merriweather', serif;">At Starlit Bistro we craft experiences — handwritten recipes, seasonal ingredients, and a warm atmosphere where stories unfold. See what guests say and share your own memory with us.</p>
+
+              <div class="mt-8 flex items-center gap-4">
+                <a href="#reviews" class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[var(--accent-start)] to-[var(--accent-end)] shadow-lg transform hover:-translate-y-1 transition focus-outline">Read Reviews →</a>
+                <button id="heroLeaveReview" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white/6 hover:bg-white/10 transition focus-outline">Leave a Review</button>
+              </div>
+
+              <div class="mt-6 flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                  <div class="text-3xl font-bold">4.8</div>
+                  <div class="text-sm text-gray-300">/ 5 — based on <span id="totalReviews">128</span> reviews</div>
+                </div>
+                <div class="hidden sm:flex items-center gap-2 text-yellow-400">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/2 rise" data-reveal>
+              <div class="p-6 rounded-2xl glass border border-white/6 shadow-2xl">
+                <h3 class="text-lg font-semibold">Featured Guest Story</h3>
+                <p class="mt-3 text-gray-200">"From the first sip of their signature citrus cocktail to the last bite of the molten chocolate gaze, Starlit Bistro turned our anniversary into a memory. The servers felt like old friends and every plate had a story."</p>
+                <div class="mt-4 flex items-center gap-3">
+                  <img src="https://pixabay.com/get/gf02e3e663eacd1d00246a530967fe73a57461fe9e024cdca24ae43ed006330bb778fd83cddb19c1ad5bfa1de81acc80824661e13c10a7dc04a1008977481fd71_640.jpg" alt="Guest" class="w-14 h-14 rounded-full object-cover shadow-md">
+                  <div>
+                    <div class="font-bold">Maria & James</div>
+                    <div class="text-xs text-gray-400">Visited on July 2025</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl bg-white/4">
+                  <div class="text-sm text-gray-300">Ambience</div>
+                  <div class="mt-2 w-full bg-white/5 rounded-full h-3 overflow-hidden">
+                    <div class="h-3 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full" style="width:92%"></div>
+                  </div>
+                </div>
+                <div class="p-4 rounded-xl bg-white/4">
+                  <div class="text-sm text-gray-300">Service</div>
+                  <div class="mt-2 w-full bg-white/5 rounded-full h-3 overflow-hidden">
+                    <div class="h-3 bg-gradient-to-r from-lime-400 to-green-500 rounded-full" style="width:95%"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews Section -->
+      <section id="reviews" class="w-full px-6 py-20">
+        <div class="w-full flex flex-col md:flex-row gap-8">
+          <aside class="w-full md:w-1/3 p-6 rounded-2xl glass border border-white/6 shadow-lg rise" data-reveal>
+            <h2 class="text-2xl font-bold">Guest Reviews</h2>
+            <p class="text-sm text-gray-300 mt-2">Honest feedback from real meals. We use reviews to improve every season and every dish.</p>
+
+            <div class="mt-6">
+              <div class="flex items-center gap-4">
+                <div class="text-4xl font-extrabold">4.8</div>
+                <div>
+                  <div class="text-sm text-gray-300">Average rating</div>
+                  <div class="text-yellow-400">★★★★★</div>
+                </div>
+              </div>
+
+              <div class="mt-6 space-y-3 text-sm text-gray-300">
+                <div class="flex items-center justify-between"><span>5 stars</span><span>84%</span></div>
+                <div class="w-full h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-3 bg-gradient-to-r from-emerald-400 to-green-500" style="width:84%"></div></div>
+
+                <div class="flex items-center justify-between mt-2"><span>4 stars</span><span>10%</span></div>
+                <div class="w-full h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-3 bg-gradient-to-r from-yellow-400 to-amber-500" style="width:10%"></div></div>
+
+                <div class="flex items-center justify-between mt-2"><span>3 stars</span><span>3%</span></div>
+                <div class="w-full h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-3 bg-gradient-to-r from-orange-400 to-red-400" style="width:3%"></div></div>
+
+                <div class="mt-4 text-xs text-gray-400">Average response time to reviews: <strong>24 hours</strong>.</div>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <button id="openReviewBottom" class="w-full px-4 py-3 rounded-full bg-gradient-to-r from-[var(--accent-start)] to-[var(--accent-end)] shadow-md">Write a Review</button>
+            </div>
+          </aside>
+
+          <div class="w-full md:w-2/3 space-y-6">
+            <!-- Reviews list (cards) -->
+            <div id="reviewsList" class="grid grid-cols-1 gap-4">
+              <!-- Review card template injected by JS -->
+            </div>
+
+            <!-- Load more & filters -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <label for="sort" class="text-sm">Sort:</label>
+                <select id="sort" class="px-3 py-2 rounded-lg bg-white/5 focus-outline">
+                  <option value="new">Newest</option>
+                  <option value="top">Top Rated</option>
+                </select>
+              </div>
+              <button id="loadMore" class="px-4 py-2 rounded-lg bg-white/6 hover:bg-white/8">Load more</button>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="mt-6 p-4 rounded-xl glass border border-white/6">
+              <h3 class="font-semibold">Frequently asked about reviews</h3>
+              <div class="mt-3 space-y-2" id="faq">
+                <div class="p-3 rounded-lg bg-white/3 cursor-pointer" data-open="false" tabindex="0">
+                  <div class="flex items-center justify-between"><div>How are reviews verified?</div><div class="text-gray-300">▾</div></div>
+                  <div class="mt-2 text-sm text-gray-300 hidden">We verify reviews through email confirmation and occasional follow-ups. We also highlight verified purchases and reservations.</div>
+                </div>
+
+                <div class="p-3 rounded-lg bg-white/3 cursor-pointer" data-open="false" tabindex="0">
+                  <div class="flex items-center justify-between"><div>Can I edit my review?</div><div class="text-gray-300">▾</div></div>
+                  <div class="mt-2 text-sm text-gray-300 hidden">Yes — reach out to us via the contact page or use the edit link in your review confirmation email within 48 hours.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials carousel -->
+      <section class="w-full px-6 py-12">
+        <div class="p-6 rounded-2xl glass border border-white/6 shadow-lg">
+          <h3 class="text-xl font-bold">Voices from the table</h3>
+          <div id="carousel" class="mt-6 relative overflow-hidden rounded-lg">
+            <div class="flex transition-transform duration-700" style="transform: translateX(0%);">
+              <div class="min-w-full p-6">
+                <blockquote class="text-lg italic">"The seared scallops were the best I've had in years. The ambiance makes every meal feel intimate."</blockquote>
+                <div class="mt-3 text-sm text-gray-300">— Anita K.</div>
+              </div>
+              <div class="min-w-full p-6">
+                <blockquote class="text-lg italic">"Amazing vegetarian options, each plate was vibrant and full of flavor. A new favorite."</blockquote>
+                <div class="mt-3 text-sm text-gray-300">— Rahul P.</div>
+              </div>
+              <div class="min-w-full p-6">
+                <blockquote class="text-lg italic">"Service was so thoughtful. We celebrated my dad's birthday — they made it unforgettable."</blockquote>
+                <div class="mt-3 text-sm text-gray-300">— The Martinez Family</div>
+              </div>
+            </div>
+
+            <div class="absolute bottom-3 right-3 flex gap-2">
+              <button id="prevSlide" class="p-2 bg-white/6 rounded-full">◀</button>
+              <button id="nextSlide" class="p-2 bg-white/6 rounded-full">▶</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="w-full px-6 py-12">
+        <div class="p-8 rounded-2xl bg-gradient-to-r from-[var(--accent-start)] to-[var(--accent-end)] shadow-2xl">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h3 class="text-2xl font-bold">Share your Starlit story</h3>
+              <p class="text-sm text-white/90">Help other guests discover us — your words matter. Every review helps our kitchen grow.</p>
+            </div>
+            <div>
+              <button id="ctaLeaveReview" class="px-6 py-3 rounded-full bg-black/30 hover:brightness-110 transition">Leave a Review</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Review Modal -->
+    <div id="reviewModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-6">
+      <div class="w-full md:w-2/3 lg:w-1/2 p-6 rounded-2xl glass border border-white/8 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="flex items-start justify-between">
+          <h4 id="modalTitle" class="text-xl font-semibold">Leave a Review</h4>
+          <button id="closeModal" class="text-gray-300">✕</button>
+        </div>
+
+        <form id="reviewForm" class="mt-4 space-y-4" novalidate>
+          <div>
+            <label class="text-sm">Your name</label>
+            <input id="rName" type="text" required class="w-full mt-2 px-3 py-2 rounded-lg bg-white/4 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-required="true">
+          </div>
+
+          <div>
+            <label class="text-sm">Rating</label>
+            <div id="starRating" class="mt-2 flex gap-2 text-yellow-400" role="radiogroup" aria-label="Star rating">
+              <button type="button" data-value="1" class="star">☆</button>
+              <button type="button" data-value="2" class="star">☆</button>
+              <button type="button" data-value="3" class="star">☆</button>
+              <button type="button" data-value="4" class="star">☆</button>
+              <button type="button" data-value="5" class="star">☆</button>
+            </div>
+            <input type="hidden" id="rRating" required>
+          </div>
+
+          <div>
+            <label class="text-sm">Your review</label>
+            <textarea id="rText" rows="4" required class="w-full mt-2 px-3 py-2 rounded-lg bg-white/4 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button type="submit" class="px-4 py-2 rounded-full bg-gradient-to-r from-[var(--accent-start)] to-[var(--accent-end)]">Submit review</button>
+            <button type="button" id="cancelReview" class="px-4 py-2 rounded-lg bg-white/5">Cancel</button>
+          </div>
+          <div id="formMsg" class="text-sm text-red-400"></div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Utility: reveal animations
+      document.addEventListener('DOMContentLoaded', ()=>{
+        document.querySelectorAll('[data-reveal]').forEach(el=> setTimeout(()=> el.classList.add('show'), 150));
+
+        // Mobile menu
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', ()=>{
+          const root = document.body;
+          const current = root.getAttribute('data-theme');
+          root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+        });
+
+        // Modal controls
+        const reviewModal = document.getElementById('reviewModal');
+        const openButtons = [document.getElementById('openReview'), document.getElementById('openReviewBottom'), document.getElementById('heroLeaveReview'), document.getElementById('mobileOpenReview'), document.getElementById('ctaLeaveReview')];
+        openButtons.forEach(b => { if (b) b.addEventListener('click', ()=> reviewModal.classList.remove('hidden')) });
+        document.getElementById('closeModal').addEventListener('click', ()=> reviewModal.classList.add('hidden'));
+        document.getElementById('cancelReview').addEventListener('click', ()=> reviewModal.classList.add('hidden'));
+
+        // Star rating
+        const stars = document.querySelectorAll('#starRating .star');
+        const ratingInput = document.getElementById('rRating');
+        stars.forEach(s=> s.addEventListener('click', ()=>{
+          const val = s.getAttribute('data-value');
+          ratingInput.value = val;
+          stars.forEach(st => st.textContent = Number(st.getAttribute('data-value')) <= val ? '★' : '☆');
+        }));
+
+        // Review data store (sample)
+        let reviews = [
+          {name: 'Anita K.', rating: 5, text: "The seared scallops were the best I've had in years. The ambiance makes every meal feel intimate.", date: '2025-07-01'},
+          {name: 'Rahul P.', rating: 5, text: "Amazing vegetarian options, each plate was vibrant and full of flavor.", date: '2025-06-21'},
+          {name: 'Maria & James', rating: 5, text: "From the first sip of their citrus cocktail to the molten dessert — unforgettable.", date: '2025-05-09'}
+        ];
+
+        const reviewsList = document.getElementById('reviewsList');
+        const totalReviewsEl = document.getElementById('totalReviews');
+
+        function renderReviews(slice = reviews){
+          reviewsList.innerHTML = '';
+          slice.forEach(r => {
+            const card = document.createElement('div');
+            card.className = 'p-4 rounded-xl bg-white/4';
+            card.innerHTML = `
+              <div class=\"flex items-start gap-4\"> 
+                <div class=\"w-12 h-12 rounded-full bg-white/6 flex items-center justify-center text-2xl\">${r.name.charAt(0)}</div>
+                <div class=\"flex-1\"> 
+                  <div class=\"flex items-center justify-between\"> 
+                    <div><strong>${r.name}</strong><div class=\"text-xs text-gray-300\">${new Date(r.date).toLocaleDateString()}</div></div>
+                    <div class=\"text-yellow-400\">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+                  </div>
+                  <div class=\"mt-2 text-sm text-gray-200\">${r.text}</div>
+                </div>
+              </div>
+            `;
+            reviewsList.appendChild(card);
+          });
+          totalReviewsEl.textContent = reviews.length;
+        }
+
+        renderReviews();
+
+        // Form submit
+        document.getElementById('reviewForm').addEventListener('submit', (e)=>{
+          e.preventDefault();
+          const name = document.getElementById('rName').value.trim();
+          const rating = Number(document.getElementById('rRating').value);
+          const text = document.getElementById('rText').value.trim();
+          const msg = document.getElementById('formMsg');
+          msg.textContent = '';
+          if(!name || !rating || !text){ msg.textContent = 'Please complete all fields and choose a rating.'; return; }
+
+          // Add to reviews and re-render
+          reviews.unshift({name, rating, text, date: new Date().toISOString().slice(0,10)});
+          renderReviews();
+
+          // Small success animation
+          msg.classList.remove('text-red-400');
+          msg.classList.add('text-green-400');
+          msg.textContent = 'Thanks — your review was submitted! (preview only)';
+
+          // Reset form after a moment
+          setTimeout(()=>{
+            document.getElementById('reviewForm').reset();
+            stars.forEach(st=> st.textContent = '☆');
+            ratingInput.value = '';
+            reviewModal.classList.add('hidden');
+            msg.textContent = '';
+            msg.classList.remove('text-green-400');
+          }, 1200);
+        });
+
+        // Carousel
+        const carousel = document.getElementById('carousel').querySelector('div');
+        let slide = 0;
+        const slides = carousel.children.length;
+        document.getElementById('nextSlide').addEventListener('click', ()=>{ slide = (slide+1)%slides; carousel.style.transform = `translateX(-${slide*100}%)`; });
+        document.getElementById('prevSlide').addEventListener('click', ()=>{ slide = (slide-1+slides)%slides; carousel.style.transform = `translateX(-${slide*100}%)`; });
+        setInterval(()=>{ slide = (slide+1)%slides; carousel.style.transform = `translateX(-${slide*100}%)`; }, 6000);
+
+        // FAQ accordion
+        document.querySelectorAll('#faq > div').forEach(item=>{
+          item.addEventListener('click', ()=> toggleFAQ(item));
+          item.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') toggleFAQ(item); });
+        });
+        function toggleFAQ(item){ const open = item.getAttribute('data-open') === 'true'; item.setAttribute('data-open', !open); item.querySelector('div:nth-child(2)').classList.toggle('hidden'); }
+
+        // Load more (demo: duplicates)
+        document.getElementById('loadMore').addEventListener('click', ()=>{
+          // Duplicate recent reviews to simulate loading more
+          const toAdd = reviews.slice(0,3).map(r => ({...r, date: new Date().toISOString().slice(0,10)}));
+          reviews = reviews.concat(toAdd);
+          renderReviews();
+        });
+
+        // Keyboard accessibility for modal (Esc)
+        document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') reviewModal.classList.add('hidden'); });
+
+        // Smooth scroll for in-page links
+        document.querySelectorAll('a[href^="#"]').forEach(a=> a.addEventListener('click', (e)=>{ e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'}); }));
+
+        // Lazy load images (simple)
+        document.querySelectorAll('img').forEach(img => { img.loading = 'lazy'; });
+      });
+    </script>
+  </body>
+</html>
