@@ -1,0 +1,102 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:300,400,500,600,700&family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About — Starlit Bistro</title>
+    <meta name="description" content="Our story — how Starlit Bistro began, our values, and the people behind every plate." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root{ --accent-start: #FF7A59; --accent-end: #7F00FF; }
+      .glass{ backdrop-filter: blur(6px); }
+    </style>
+  </head>
+  <body style="font-family: 'Merriweather', sans-serif;" class="min-h-screen bg-gradient-to-b from-[#020617] to-[#0b1320] text-white">
+    <header class="w-full px-6 py-5 glass bg-black/20 fixed top-0 left-0 z-40">
+      <div class="flex items-center justify-between">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--accent-start)] to-[var(--accent-end)] flex items-center justify-center">🍴</div><div class="text-lg font-bold">Starlit Bistro</div></a>
+        <div class="flex items-center gap-4">
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm">Home</a>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm">Contact</a>
+          <a href="./index.html#reviews" class="text-sm">Reviews</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full pt-24 px-6">
+      <section class="w-full p-8 rounded-2xl glass border border-white/6">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2">
+            <h1 class="text-4xl font-extrabold">Our Story</h1>
+            <p class="mt-4 text-gray-300">Starlit Bistro began as a small dream on a street corner — a place where recipes told the stories of our travels. We believe food is memory, comfort, and adventure. Every dish is created with care, rooted in seasonality and served with warmth.</p>
+
+            <div class="mt-6 space-y-4">
+              <div class="p-4 rounded-lg bg-white/5">
+                <h4 class="font-semibold">Farm-to-Table</h4>
+                <p class="text-sm text-gray-300 mt-2">We partner with local growers to bring the freshest ingredients to your plate.</p>
+              </div>
+
+              <div class="p-4 rounded-lg bg-white/5">
+                <h4 class="font-semibold">Sustainable Practices</h4>
+                <p class="text-sm text-gray-300 mt-2">Reducing waste and using compostable packaging are part of our promise to the planet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2">
+            <div class="w-full h-64 rounded-xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1607615764542-c591aecb2222?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw4fHxjaGVmJTIwcGxhdGluZyUyMGFuJTIwZWxlZ2FudCUyMGRpc2glMjBpbiUyMHdhcm0lMjBraXRjaGVuJTIwbGlnaHR8ZW58MHwwfHx8MTc1NTM0NjYzM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Chef plating" class="w-full h-full object-cover">
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-4">
+              <img src="https://images.pexels.com/photos/2084239/pexels-photo-2084239.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Produce" class="w-full h-28 object-cover rounded-lg">
+              <img src="https://pixabay.com/get/g9ed642faa2ca4836f7e9a8f53e446954fb903f2ff0e7938bc0e3a0c4af54b1dc90532b86fe920c90b7dcb5c1175eaab9_640.jpg" alt="Guests" class="w-full h-28 object-cover rounded-lg">
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <h3 class="text-xl font-semibold">Meet the team</h3>
+          <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-4 rounded-lg bg-white/5">
+              <img src="https://images.pexels.com/photos/6937487/pexels-photo-6937487.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Chef" class="w-full h-40 object-cover rounded-md">
+              <div class="mt-2 font-semibold">Chef Lucien</div>
+              <div class="text-xs text-gray-300">Head Chef & Founder</div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-white/5">
+              <img src="https://images.unsplash.com/photo-1739596682591-0a5d20625aab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxwb3J0cmFpdCUyMG9mJTIwYSUyMGZyaWVuZGx5JTIwbWFuYWdlcnxlbnwwfDB8fHwxNzU1MjM5ODAxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Manager" class="w-full h-40 object-cover rounded-md">
+              <div class="mt-2 font-semibold">Amara</div>
+              <div class="text-xs text-gray-300">General Manager</div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-white/5">
+              <img src="https://pixabay.com/get/gcb68d8d30b1ed1049a477c8d550624ec57a742c9c06d6917a4e8b4fe68fbb3774a91ef9bac6aec498b25b3b7d9cdab481555b793ddc96cf3fbddabda79dcf7f2_640.jpg" alt="Mixologist" class="w-full h-40 object-cover rounded-md">
+              <div class="mt-2 font-semibold">Diego</div>
+              <div class="text-xs text-gray-300">Drink Alchemist</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-[var(--accent-start)] to-[var(--accent-end)]">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-2xl font-bold">Book a table. Create a memory.</h3>
+            <p class="text-sm text-white/90">Reserve your evening and let us handle the rest.</p>
+          </div>
+          <div>
+            <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="px-4 py-2 rounded-full bg-black/30">Reserve now</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </body>
+</html>
