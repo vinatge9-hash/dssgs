@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: starlit-bistro
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: "npm start"
+    routes:
+      - type: exact
+        path: /
+      - type: exact
+        path: /index.html
+    envVars:
+      - key: NODE_ENV
+        value: production
