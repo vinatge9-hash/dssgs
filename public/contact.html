@@ -1,0 +1,91 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:300,400,500,600,700&family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Starlit Bistro</title>
+    <meta name="description" content="Get in touch with Starlit Bistro for reservations, private events, and feedback." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .glass{ backdrop-filter: blur(6px); }
+    </style>
+  </head>
+  <body style="font-family: 'Merriweather', sans-serif;" class="min-h-screen bg-gradient-to-b from-[#071021] to-[#031226] text-white">
+    <header class="w-full px-6 py-5 fixed top-0 left-0 z-40 glass bg-black/20">
+      <div class="flex items-center justify-between">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF7A59] to-[#7F00FF] flex items-center justify-center">🍴</div><div class="text-lg font-bold">Starlit Bistro</div></a>
+        <div class="flex items-center gap-4">
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm">Home</a>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm">About</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full pt-24 px-6">
+      <section class="w-full rounded-2xl p-8 glass border border-white/6">
+        <h1 class="text-3xl font-bold">Contact & Reservations</h1>
+        <p class="text-gray-300 mt-2">We love hearing from you — whether it's a reservation, a private event inquiry, or feedback about your experience.</p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-4 rounded-lg bg-white/4">
+            <h3 class="font-semibold">Visit us</h3>
+            <p class="text-sm text-gray-300 mt-2">123 Moonlight Ave, Suite 5<br/>Open Tue–Sun: 5pm–11pm</p>
+
+            <div class="mt-4">
+              <h4 class="font-semibold">Phone</h4>
+              <a href="tel:+1234567890" class="text-sm text-gray-300">+1 (234) 567-890</a>
+            </div>
+
+            <div class="mt-4">
+              <h4 class="font-semibold">Private events</h4>
+              <p class="text-sm text-gray-300">Host a tasting or an intimate celebration. Tell us about your event and we'll tailor the menu.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-white/4">
+            <h3 class="font-semibold">Send us a message</h3>
+            <form id="contactForm" class="mt-3 space-y-3" novalidate>
+              <input id="cName" class="w-full px-3 py-2 rounded-lg bg-white/5 focus:outline-none" placeholder="Your name" required>
+              <input id="cEmail" type="email" class="w-full px-3 py-2 rounded-lg bg-white/5 focus:outline-none" placeholder="Email" required>
+              <textarea id="cMsg" rows="4" class="w-full px-3 py-2 rounded-lg bg-white/5 focus:outline-none" placeholder="Message" required></textarea>
+              <div class="flex items-center gap-3">
+                <button type="submit" class="px-4 py-2 rounded-full bg-gradient-to-r from-[#FF7A59] to-[#7F00FF]">Send message</button>
+                <div id="contactMsg" class="text-sm text-green-400 hidden">Message sent (demo).</div>
+              </div>
+            </form>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', ()=>{
+                document.getElementById('contactForm').addEventListener('submit', (e)=>{
+                  e.preventDefault();
+                  // simple validation
+                  const name = document.getElementById('cName').value.trim();
+                  const email = document.getElementById('cEmail').value.trim();
+                  const msg = document.getElementById('cMsg').value.trim();
+                  if(!name || !email || !msg){ alert('Please fill all fields.'); return; }
+                  document.getElementById('contactMsg').classList.remove('hidden');
+                  setTimeout(()=> document.getElementById('contactMsg').classList.add('hidden'), 2000);
+                  document.getElementById('contactForm').reset();
+                });
+              });
+            </script>
+
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 rounded-lg bg-white/5">
+          <h4 class="font-semibold">Location (map)</h4>
+          <div class="mt-3 w-full h-48 rounded-lg overflow-hidden">
+            <img src="https://pixabay.com/get/g2873552031601b31eb417c06595283794e294b4b102b13ba32466edf5717479bfc850821b4c5371a483400cb663e4256f55c875f03ed6cda17ee5f87e40c9b60_640.jpg" alt="Map" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </body>
+</html>
